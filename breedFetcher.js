@@ -1,10 +1,8 @@
-const request = require('request'); 
+const request = require('request');
 const breedName = process.argv.slice(2);
 
 
-request(`https://api.thecatapi.com/v1/breeds/search?q=${breedName[0]}`, function (error, response, body) {
-  //console.log('body:', body);
-  //console.log(typeof body);
+request(`https://api.thecatapi.com/v1/breeds/search?q=${breedName[0]}`, function(error, response, body) {
   if (error) {
     return console.log("Failed to request details:", error);
   }
@@ -18,8 +16,4 @@ request(`https://api.thecatapi.com/v1/breeds/search?q=${breedName[0]}`, function
     //console.log(data);
     console.log(data[0]['description']);
   }
-  
-//console.log(data);
-//console.log(typeof data);
-
 });
