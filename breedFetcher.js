@@ -4,6 +4,9 @@ request('https://api.thecatapi.com/v1/breeds/search?q=sib', function (error, res
   //console.log('body:', body);
   //console.log(typeof body);
   const data = JSON.parse(body);
-console.log(data);
-console.log(typeof data);
-})
+  
+  console.log(data[0]['description']);
+//console.log(data);
+//console.log(typeof data);
+
+});
