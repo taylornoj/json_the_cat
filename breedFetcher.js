@@ -7,8 +7,14 @@ request(`https://api.thecatapi.com/v1/breeds/search?q=${args[0]}`, function (err
   //console.log(typeof body);
   const data = JSON.parse(body);
   
-  //console.log(data[0]['description']);
-console.log(data);
+  if (data[0] === undefined) {
+    console.log("Breed name not found");
+  } else {
+    //console.log(data);
+    console.log(data[0]['description']);
+  }
+  
+//console.log(data);
 //console.log(typeof data);
 
 });
